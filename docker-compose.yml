@@ -28,7 +28,7 @@ services:
 
     container_name: cm_activity_node
     ports:
-      - "3001:3001"
+      - "8338:8338"
     tty: true
     
     # links:
