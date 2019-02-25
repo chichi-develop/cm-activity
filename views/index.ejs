@@ -42,15 +42,14 @@
     </thead>
     <tbody>
       <% users.forEach(function (cm_aclg) { %>
-      <!-- 　　　　　　　　//table user に対し、行を繰り返し -->
       <tr>
-        <td><%= cm_aclg.AL_CDSQSK %></td>　　
-        <td><%= cm_aclg.AL_NMSQSK %></td>　　
-        <td><%= cm_aclg.AL_NMSQBU %></td>　　
-        <td><%= cm_aclg.AL_NMSQTN %></td>　　
+        <td><%= cm_aclg.al_cdsqsk %></td>　　
+        <td><%= cm_aclg.al_nmsqsk %></td>　　
+        <td><%= cm_aclg.al_nmsqbu %></td>　　
+        <td><%= cm_aclg.al_nmsqtn %></td>　　
         <!-- //table user から al_nmsqsk 列の値を表示 -->
-        <td><%= cm_aclg.AL_NMACTV %></td>　　
-        <% const dd = cm_aclg.AL_DTACTV;
+        <td><%= cm_aclg.al_nmactv %></td>　　
+        <% const dd = cm_aclg.al_dtactv;
             //「年」を取得する
             var YYYY = dd.getFullYear();
             //「月」を取得する
@@ -66,10 +65,10 @@
             const pelem011 = YYYY + "/" + MM + "/" + DD;
          %>
         <td class="pelem011"><%= pelem011 %></td>
-        <td class="int"><%= cm_aclg.AL_NOACTV %></td>　　
-        <td><%= cm_aclg.AL_TXACTV %></td>　　
-        <td class="int"><%= cm_aclg.AL_SUSURY %></td>　　
-        <td class="int"><%= cm_aclg.AL_KGGOKE.toLocaleString() %></td>　　
+        <td class="int"><%= cm_aclg.al_noactv %></td>　　
+        <td><%= cm_aclg.al_txactv %></td>　　
+        <td class="int"><%= cm_aclg.al_susury %></td>　　
+        <td class="int"><%= cm_aclg.al_kggoke.toLocaleString() %></td>　　
       </tr>
       <% }) %>
     </tbody>
