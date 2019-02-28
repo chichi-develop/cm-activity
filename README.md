@@ -33,3 +33,4 @@ C:\mysql-5.7.24-winx64\mysql-5.7.24-winx64\bin\mysql -h 192.168.0.250  -udocker 
 echo 処理が完了しました。
 pause
 ```
+2019.02.28 障害対応：docker container cm-activity-mysql Exit => docker-compose スタート
