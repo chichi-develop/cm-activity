@@ -1,5 +1,20 @@
 # cm-activity
 
+## 利用
+
+### 初回のみ（data container)
+```
+docker clone
+docker
+```
+
+### 初回、その後共通
+
+```
+docker clone
+docker-compose up -d --build
+```
+
 
 ## データベース　移行
 
