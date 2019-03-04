@@ -4,7 +4,7 @@ services:
   # MySQL
   db:
     image: mysql:5.7
-    container_name: cm_activity_mysql
+    container_name: cm-act-mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: ccwebdb
@@ -19,18 +19,18 @@ services:
     - mysql-data:/var/lib/mysql
     ports:
     - 3306:3306
-  
+
   node:
     build:
       context: .
 #      args:
 #        - NODE_ENV=development
 
-    container_name: cm_activity_node
+    container_name: cm-act-node
     ports:
       - "8338:3001"
     tty: true
-    
+
     # links:
     #   - 813d4bd0ae81
     # volumes:
@@ -42,3 +42,8 @@ services:
 
 volumes:
   mysql-data:
+
+networks:
+  default:
+    external:
+      name: chichi-network
