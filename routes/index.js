@@ -7,7 +7,7 @@ var array = { title: null, users: null, content: null };
 
 
 router.get('/', function (req, res) {
-  app.connection.query('select * from cm_aclg where al_idactv = 1 order by AL_DTACTV desc', function (err, rows) {
+  app.connection.query('select * from cm_aclg where al_idactv = 1 order by al_dtactv desc', function (err, rows) {
     array.users = rows; 　  //連想配列arrayの変数usersにDBの行rowsを入力
     array.title = '書籍・セミナー・大会履歴';　  //連想配列arrayの変数titleに値を入力
     array.content = req.body.message;
@@ -21,7 +21,7 @@ router.get('/', function (req, res) {
 router.post('/', (req, res) => {　　// POST送信の処理
 
   app.connection.query(
-    'select * from cm_aclg where al_cdsqsk = ? order by AL_DTACTV desc',
+    'select * from cm_aclg where al_cdsqsk = ? order by al_dtactv desc',
     //table cm_aclg から AL_CDSQSK に？（何か）が入っている行を取り出す。
     //? はプレースホルダーであとから「?」の中身を指定するという意味
     //where句は完全一致のため、大文字小文字区別した名前全体が「?」に入るべき文字となる。
