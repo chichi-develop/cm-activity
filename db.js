@@ -1,6 +1,6 @@
 var mysql = require('mysql');　　//mysqlを要求
 var connection = mysql.createConnection({   　　//hostの情報でDBへアクセス
-  host: 'cm_activity_mysql', user: 'docker',
+  host: 'cm-act-mysql', user: 'docker',
   password: 'docker', database: 'ccwebdb'
 });
 
