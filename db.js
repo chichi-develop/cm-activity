@@ -1,15 +1,27 @@
 var mysql = require('mysql');　　//mysqlを要求
-var connection = mysql.createConnection({   　　//hostの情報でDBへアクセス
-  host: 'cm-act-mysql', user: 'docker',
-  password: 'docker', database: 'ccwebdb'
-});
+
+if (process.env.NODE_ENV === "production") {
+  var connection = mysql.createConnection({  //hostの情報でDBへアクセス
+  host: 'cm-act-mysql',
+  user: 'docker',
+  password: 'docker',
+  database: 'ccwebdb'
+  });
+} else {
+  var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'docker',
+  password: 'docker',
+  database: 'ccwebdb'
+  });
+};
 
 exports.connection = connection;
 
 function handleDisconnect() {
   console.log('INFO.CONNECTION_DB: ');
   connection = mysql.createConnection(connection);
-  
+
   connection.connect((err) => {   　//DB接続テスト用。アクセス成功でメッセージ返す。
       if (err) {
           console.log('Error connecting to DB');

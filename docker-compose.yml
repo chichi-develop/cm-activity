@@ -13,7 +13,7 @@ services:
       TZ: 'Asia/Tokyo'
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     volumes:
-    # - ./docker/db/data:/var/lib/mysql
+    # - ./db/data:/var/lib/mysql
     - ./db/my.cnf:/etc/mysql/conf.d/my.cnf
     - ./db/sql:/docker-entrypoint-initdb.d
     - mysql-data:/var/lib/mysql
@@ -23,19 +23,12 @@ services:
   node:
     build:
       context: .
-#      args:
-#        - NODE_ENV=development
-
+    environment:
+      - NODE_ENV=production
     container_name: cm-act-node
     ports:
       - "8338:3001"
     tty: true
-
-    # links:
-    #   - 813d4bd0ae81
-    # volumes:
-    #   - ./database:/app/database:delegate
-#      - NODE_ENV=development
     depends_on:
       - db
     command: sh /wait.sh npm start
