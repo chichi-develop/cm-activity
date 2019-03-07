@@ -28,7 +28,7 @@ docker-compose up -d --build
 echo exportしています。しばらくお待ち下さい。
 
 S:
-C:\mysql-5.7.24-winx64\mysql-5.7.24-winx64\bin\mysqldump -h 192.168.0.250 -u docker -pdocker -r ccwebdb.bakcup --single-transaction ccwebdb
+C:\mysql-5.7.24-winx64\mysql-5.7.24-winx64\bin\mysqldump -h 192.168.0.250 -u docker -pdocker -r ccwebdb.backup --single-transaction ccwebdb
 
 echo 処理が完了しました。
 pause
@@ -43,7 +43,7 @@ pause
 echo importしています。しばらくお待ち下さい。
 
 S:
-C:\mysql-5.7.24-winx64\mysql-5.7.24-winx64\bin\mysql -h 192.168.0.250  -udocker -pdocker ccwebdb < ccwebdb_20190225_2.bakcup
+C:\mysql-5.7.24-winx64\mysql-5.7.24-winx64\bin\mysql -h 192.168.0.250  -udocker -pdocker ccwebdb < ccwebdb_20190225_2.backup
 
 echo 処理が完了しました。
 pause
