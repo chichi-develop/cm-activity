@@ -48,4 +48,3 @@ C:\mysql-5.7.24-winx64\mysql-5.7.24-winx64\bin\mysql -h 192.168.0.250  -udocker 
 echo 処理が完了しました。
 pause
 ```
-PR test
